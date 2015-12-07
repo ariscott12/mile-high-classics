@@ -1,0 +1,63 @@
+.node-9 {
+    .field-name-body {
+        float: left;
+        width: 50%;
+    }
+    .field-item {
+        width: 60%;
+        margin: 0 auto;
+        padding-top: 80px;
+    }
+    .about-background {
+        float: left;
+        width: 50%;
+        min-height: 680px;
+        opacity:0;
+        @include cover-background('../images/who-we-are.jpg');
+        @include transition(opacity .5s ease-out);
+        &.active {
+            opacity: 1;
+        }
+    }
+    h2 {
+        text-transform: capitalize;
+        margin-bottom: 34px;
+    }
+    p {
+        @include font-size(16px);
+        margin-bottom: 20px;
+        line-height: 26px;
+    }
+    /** Media Queries **/
+    @include break-at(1460) {
+        .field-item {
+            width: 70%;
+        }
+    }
+    @include break-at(890) {
+        .field-name-body {
+            width: 60%
+        }
+        .about-background {
+            width: 40%
+        }
+    }
+    @include break-at(730) {
+        .field-name-body,
+        .about-background {
+            width: 100%
+        }
+        .field-item {
+            width: 80%;
+            padding:40px 0;
+        }
+        .about-background {
+            min-height: 400px;
+        }
+    }
+    @include break-at(600) {
+        .field-item {
+             width: 90%;
+        }
+    }
+}

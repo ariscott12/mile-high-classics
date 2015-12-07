@@ -1,0 +1,75 @@
+#admin-menu {
+    z-index: 2000;
+}
+
+.region-header {
+    ul.menu {
+        float: right;
+        li {
+            float: left;
+            list-style-type: none;
+            list-style-image: none;
+            margin: 0 0 0 70px;
+            padding: 0;
+            height: 60px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        a {
+            font-family: $font-family-pt-sans;
+            height: 60px;
+            line-height: 62px;
+            color: #eee;
+            @include font-size(17px);
+        }
+    }
+}
+
+.jump-links {
+    background: $teal;
+    .item-list {
+        margin: 0 auto;
+        width: 300px;
+    }
+    ul {
+        margin: 0;
+        li {
+            list-style-type: none;
+            display: inline-block;
+            margin: 0 32px 0 0;
+            padding: 18px 0 16px;
+            a.active {
+                color: $white-light;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &.sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 2000;
+        @include background-opacity($teal, 0.9);
+    }
+}
+
+.hamburger {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    li {
+        background: $white-light;
+        height: 4px;
+        list-style-type: none;
+        margin-bottom: 5px;
+        top: 10px;
+        width: 27px;
+    }
+    @include break-at(500) {
+        display: block;
+    }
+}

@@ -1,0 +1,22 @@
+<div class='banner-video'>
+  {% if video %}
+  {#    <video>
+       <source src="{{ video }}" type="video/mp4" />
+     </video> #}
+     <div class = "video-overlay"></div>
+     <img src = "{{ video }}" />
+  {% endif %}
+  <div class = "content">
+    <div class="text-wrapper">
+      <div class="text-main">
+        {{ text }}
+      </div>
+      <a href = "/contact-us" class="button-standard">
+        {{ subtext }}
+     </a>
+    </div>
+    <div class="jump-nav" data-id = "learn-more">
+     Learn More
+    </div>
+  </div>
+</div>

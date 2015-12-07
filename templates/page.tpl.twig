@@ -1,0 +1,33 @@
+<!-- <div id="page"> -->
+  <header role = "header">
+    {% render(page.header) %}
+     <ul class = "hamburger" data-id = "hamburger">
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+  </header>
+   {% if page.banner %}
+  <div class = "banner" role = "banner">
+     {% render(page.banner) %}
+  </div>
+  {% endif %}
+  <main role = "main">
+    <div class = "content-wrapper" data-id = "content">
+      {% render(page.title_suffix) %}
+      {{messages}}
+      {% render(tabs) %}
+      {% render(help) %}
+      {% if action_links %}
+        <ul class="action-links">{% render(action_links) %}</ul>
+      {% endif %}
+      {% render(page.content) %}
+    </div>
+     {% render(page.lower_content) %}
+  </main>
+  <footer role="footer">
+    <div class = "footer-wrapper">
+      {% render(page.footer) %}
+    </div>
+  </footer>
+<!-- </div> -->

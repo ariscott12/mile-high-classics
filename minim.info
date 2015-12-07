@@ -1,0 +1,19 @@
+name = Minim
+description = A minimal foundation for a clean and sustainable Drupal theme.
+core = 7.x
+engine = twig
+
+; Regions
+regions[header] = Header
+regions[banner] = Banner
+regions[content] = Content
+regions[lower_content] = Lower Content
+regions[footer] = Footer
+
+
+; Stylesheets
+stylesheets[all][] = css/objects.css
+stylesheets[all][] = css/layout.css
+stylesheets[all][] = css/content.css
+stylesheets[all][] = css/navigation.css
+stylesheets[all][] = css/media-queries.css

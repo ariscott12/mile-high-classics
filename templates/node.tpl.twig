@@ -1,0 +1,33 @@
+<article class="node-{{node.nid}} {{classes}} clearfix" {{attributes}}>
+  {% if title_prefix || title_suffix || display_submitted || unpublished || page is null && title %}
+   {#  <header> #}
+      {% render(title_prefix) %}
+      {% if page && title %}
+           {#  <div class="banner-page">
+              <div class = "text-wrapper">
+                <div class = "content">
+                  <h3 {{title_attributes}}>{{title}}</h3>
+                </div>
+              </div>
+              <div class = "overlay"></div>
+            </div> #}
+      {% endif %}
+    {#   {% render(title_suffix) %} #}
+     {#  {% if display_submitted %}
+        <p class="submitted">
+          {{user_picture}}
+          {{submitted}}
+        </p>
+      {% endif %} #}
+    {#   {% if unpublished %}
+        <p class="unpublished">Unpublished</p>
+      {% endif %} #}
+    {# </header> #}
+  {% endif %}
+  {# <div class = "content-wrapper"> #}
+    {% render(content) %}
+{#   </div> #}
+</article>
+
+
+

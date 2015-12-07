@@ -1,0 +1,11 @@
+<article class="node-{{node.nid}} {{classes}} clearfix" {{attributes}}>
+  <div class='jump-links'>
+    {% if jump_links %}
+      {{ jump_links }}
+    {% endif %}
+  </div>
+  <div class="clearfix">
+    {{ body }}
+    {{ image }}
+  </div> 
+</article>

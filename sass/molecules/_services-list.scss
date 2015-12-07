@@ -1,0 +1,264 @@
+$height: 600px;
+.view-services-list,
+.view-restoration-process {
+    overflow: hidden;
+    h2 {
+        margin-bottom: 40px;
+        text-transform: capitalize;
+    }
+    p {
+        @include font-size(15px);
+        margin-bottom: 30px;
+    }
+    li {
+        list-style: none;
+        font-style: italic;
+        margin-bottom: 15px;
+        padding-left: 36px;
+        opacity: 0;
+        @include font-size(18px);
+        @include transition(opacity .7s ease-out);
+        &.animate {
+            opacity: 1;
+        }
+    }
+    .content-wrapper,
+    .bg-image {
+        width: 50%;
+    }
+    .content {
+        width: 60%;
+        margin: 0 auto;
+        @include vertical-align();
+    }
+}
+
+.view-services-list {
+    li {
+        background: url("../images/icons/list-bullet.png") no-repeat scroll 0 .15em;
+    }
+    .content-wrapper {
+        height: $height;
+        background: $gray-lightest;
+    }
+    .tagline {
+        @include background-opacity($black-light,
+        0.6);
+        color: $white-light;
+        font-family: $font-family-oswald;
+        padding: 30px 12%;
+        @include font-size(36px);
+        line-height: 57px;
+        @include vertical-align();
+    }
+    .views-row-odd {
+        .content-wrapper {
+            float: left;
+        }
+        .bg-image {
+            float: right;
+            @include transform(translateX(60%));
+        }
+    }
+    .views-row-even {
+        .content-wrapper {
+            float: right;
+        }
+        .bg-image {
+            float: left;
+            @include transform(translateX(-60%));
+        }
+    }
+    .views-row.active {
+        .bg-image {
+            opacity: 1;
+            @include transform(translateX(0%));
+        }
+    }
+    .bg-image {
+        @include transition(all .7s ease-out);
+        height: $height;
+        opacity: 0;
+        position: relative;
+    }
+    @include break-at(1640) {
+        .content {
+            width: 70%;
+        }
+        .tagline {
+            @include font-size(32px);
+            line-height: 52px;
+        }
+    }
+    @include break-at(1260) {
+        .content {
+            width: 84%;
+        }
+        .content-wrapper,
+        .bg-image {
+            height: 650px;
+        }
+    }
+    @include break-at(1000) {
+        .content-wrapper {
+            width: 55%;
+        }
+        .bg-image {
+            width: 45%;
+        }
+    }
+    @include break-at(760) {
+        .content-wrapper,
+        .bg-image {
+            width: 100%;
+        }
+        .content {
+            margin-bottom: 50px;
+        }
+        .content-wrapper {
+            height: auto;
+            position:static;
+            @include transform(translateY(0));
+        }
+        .bg-image {
+            height: 300px;
+        }
+    }
+    @include break-at(600) {
+        .content {
+            width: 90%;
+        }
+        .tagline {
+            @include font-size(26px);
+            line-height: 44px;
+        }
+    }
+}
+
+.view-service-list-5 .bg-image {
+    @include cover-background('../images/services-metal-large.jpg');
+}
+
+.view-service-list-8 .bg-image {
+    @include cover-background('../images/services-upholstery-large.jpg');
+}
+
+.view-service-list-7 .bg-image {
+    @include cover-background('../images/services-mechanical-large.jpg');
+}
+
+.view-service-list-6 .bg-image {
+    @include cover-background('../images/services-paint-large.jpg');
+}
+
+.view-restoration-process {
+    .content-wrapper {
+        height: 500px;
+        background: $gray-lightest;
+        float: left;
+        border-bottom: 1px solid #cecece;
+    }
+    .bg-image {
+        height: 500px;
+        float: left;
+        position: relative;
+        border-bottom: 1px solid #333;
+    }
+    ul {
+        @include vertical-align();
+        z-index: 100;
+        width: 50%;
+        margin: 0 auto;
+    }
+    li {
+        //opacity: 1;
+        background: url("../images/icons/list-bullet-orange.png") no-repeat scroll 0 .15em;
+        @include font-size(20px);
+        color: $white-light;
+    }
+    .view-restoration-block {
+        position: relative;
+    }
+    .step-wrapper {
+        @include vertical-align();
+        @include center-absolute();
+        z-index: 200;
+        height: 140px;
+        width: 140px;
+        position: absolute;
+        @include transform-style(preserve-3d);
+        @include perspective(1600px);
+    }
+    .circle-outer {
+        border: 10px solid $primary-color-3;
+        left: -10px;
+        top: -10px;
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        box-sizing: content-box;
+        position: relative;
+        opacity: 0;
+        @include transition(all .7s linear);
+    }
+    .circle-inner {
+        position: absolute;
+        @include font-size(18px);
+        @include center-absolute();
+        @include background-opacity($white-light,
+        1);
+        border-radius: 50%;
+        padding-top: 54px;
+        text-align: center;
+        font-weight: $font-weight-heavy;
+        text-transform: uppercase;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        @include transition(all .7s linear);
+        @include transform(rotateY(-180deg));
+        @include backface-visibility(hidden);
+    }
+    .overlay {
+        background: $black-light;
+        opacity: .82;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .active {
+        .circle-inner {
+            @include transform(rotateY(0deg));
+        }
+        .circle-outer {
+            opacity: 1;
+        }
+    }
+}
+
+.view-restoration-process-48 .bg-image {
+    @include cover-background('../images/services-metal-large.jpg');
+}
+
+.view-restoration-process-47 .bg-image {
+    @include cover-background('../images/services-upholstery-large.jpg');
+}
+
+.view-restoration-process-46 .bg-image {
+    @include cover-background('../images/services-mechanical-large.jpg');
+}
+
+.view-restoration-process-45 .bg-image {
+    @include cover-background('../images/services-paint-large.jpg');
+}
+
+.view-restoration-process-44 .bg-image {
+    @include cover-background('../images/services-mechanical-large.jpg');
+}
+
+.view-restoration-process-43 .bg-image {
+    @include cover-background('../images/services-paint-large.jpg');
+}

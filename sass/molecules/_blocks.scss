@@ -1,0 +1,60 @@
+#block-mhc-blocks-services-front {
+    padding: 80px 0;
+    @include outer-container;
+    p {
+        @include span-columns(6);
+        @include shift(3);
+    }
+}
+
+#block-views-services-block {
+    h2 {
+        display: none;
+    }
+}
+
+.block-service {
+    width: 25%;
+    float: left;
+    text-align: center;
+    height: 480px;
+    padding:110px 25px 0px 25px;
+    h3 {
+    	font-weight: $font-weight-heavy;
+    	color:$white-light;
+    	@include font-size(32px);
+    	margin-bottom:40px;
+    }
+    p {
+    	color:$white-light;
+
+    }
+}
+
+.views-row-1 {
+    .block-service {
+        background: url("../images/metal.jpg") no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      
+    }
+}
+
+.block-mhc-blocks {
+    h2 {
+        text-align: center;
+    }
+    p {
+        @include font-size(20px);
+        line-height: 30px;
+        text-align: center;
+    }
+    .content-divider {
+        width: 90px;
+        height: 5px;
+        background: $primary-color-2;
+        margin: 20px auto;
+    }
+}

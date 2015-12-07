@@ -1,0 +1,10 @@
+<div id="{{ block_html_id }}" class="{{ classes }} "{{ attributes }}>
+  {% render(title_prefix) %}
+  {% if block.subject %}
+    <h2 class="our-team" {{ title_attributes }}> {{ block.subject }}</h2>
+  {% endif %}
+  {% render(title_suffix) %}
+  <div class="content" {{ content_attributes }}>
+    {{ content }}
+  </div>
+</div>
