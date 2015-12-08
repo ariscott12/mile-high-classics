@@ -1,6 +1,5 @@
 var projects = (function($) {
     "use strict";
-    //window.scroll(0, 650);
     // create img element for large image
     var $imgLarge = $("<img class = \"detail-large\" data-id = \"image-large\" src = \"image\" /> ");
     var jqueryMap = {
@@ -9,12 +8,12 @@ var projects = (function($) {
         $project_pagers: $('[data-id="project-pagers"]'),
         $first_slide: $('.project-slide').eq(0),
         $img_small: $('.feature-image-small'),
-        $sidebar: $('[data-id="project-sidebar"]')
+        $sidebar: $('[data-id="project-sidebar"]'),
+        $project_grid_link: $('[data-id=project-grid-link')
     };
     jqueryMap.$project_slides.prepend($imgLarge);
     var updateSrc = function($obj) {
         var largeSrc = $obj.eq(0).attr('data-image-large');
-        //$imgLarge.hide().fadeIn(400);
         $imgLarge.attr('src', largeSrc);
     };
     updateSrc(jqueryMap.$first_slide.find('img'));
@@ -36,17 +35,57 @@ var projects = (function($) {
             animateImage();
         }
     };
+    var animatePagers = function() {
+        $('.pagers a').each(function(index) {
+            $(this).delay(125 * index).queue(function(next) {
+                $(this).addClass('rotate');
+                next();
+            });
+        });
+    }
     var toggleLargeImage = function() {
         updateSrc($(this));
         $(this).addClass('active').siblings().removeClass('active');
     };
+    var loadNewProject = function() {
+        // Get href from clicked element
+        var link = $(this).attr('href');
+
+        // prepend loader
+        $('[data-id="content"]').html('<img class = "loader" />');
+
+        // Scroll to content-wrapper section
+        $('html,body').animate({
+            scrollTop: $(".content-wrapper").offset().top
+        });
+
+        $('[data-id = "content"]').load(link + ' .content-wrapper .region-content', function() {
+          
+
+            // Update large img src
+            $('[data-id="project-slides"]').prepend($imgLarge);
+            updateSrc($('.project-slide').eq(0).find('img'));
+            
+            // Add CSS classes to slides to trigger animations
+            $('[data-id="project-slides"]').addClass('active')
+            $('.project-slide').eq(0).addClass('active');
+            $('.project-slide').eq(0).find('img').eq(0).addClass('active');
+            animateImage();
+            animatePagers();
+
+            // Add click handlers to pagers and links
+            $('[data-id="project-links"]').children().click(toggleSlides);
+            $('[data-id="project-pagers"]').children().click(toggleSlides);
+            $('.feature-image-small').click(toggleLargeImage);
+        });
+        return false;
+    }
     jqueryMap.$project_links.children().click(toggleSlides);
     jqueryMap.$project_pagers.children().click(toggleSlides);
     jqueryMap.$img_small.click(toggleLargeImage);
-   
-
+    jqueryMap.$project_grid_link.find('a').click(loadNewProject);
     // Waypoint objects
-    if ( $( ".project-sidebar" ).length ) {
+    if ($(".project-sidebar").length) {
         var projectSidebar = new Waypoint({
             element: jqueryMap.$sidebar,
             handler: function(direction) {
