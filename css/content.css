@@ -3229,3 +3229,9 @@ footer {
 .touchevents #block-mhc-blocks-projects-grid h3 {
     top: 50%;
 }
+
+.spinner {
+  background: url("../loaders/oval.svg") no-repeat center center;
+  width: 100%;
+
+}
