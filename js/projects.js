@@ -3,6 +3,8 @@ var projects = (function($) {
     // Create html elements
     var $imgLarge = $('<img class = \"detail-large\" data-id = \"image-large\"  /> ');
     var $spinner = $('<img class = "spinner" data-id = "spinner" />');
+    var imageHeight = 0;
+    var image = new Image();
 
     // Create jqueryMap
     var jqueryMap = {
@@ -14,25 +16,30 @@ var projects = (function($) {
     // Update detail-large src with clicked thumbnail src, show loading gif
     var updateLargeImage = function($obj, callback) {
         var largeImageSrc = $obj.eq(0).attr('data-image-large');
-        var image = new Image();
-        var imageHeight = $('.detail-large').height();
-
-        // Check if loader exists
+        
+        // If loader exists remove it
         if (jqueryMap.$spinner) {
             jqueryMap.$spinner.remove();
         }
         image.src = largeImageSrc;
+
+        // Only get height of detail large image if it's visible, otherwise use previously stored height
+        if($('.detail-large').is(':visible')) {
+            imageHeight = $('.detail-large').height();
+        }
+
         $imgLarge.hide();
 
         // Prepend loading gif to div wrapper and set height
         $('.project-slide-wrapper').prepend($spinner);
-       
-             $('[data-id = "spinner"]').css({
+        
+        // Callback function will hide spinner when content is finished loading  
+        if (typeof(callback) !== 'function') {
+            $('[data-id = "spinner"]').css({
                 height: imageHeight
             });
+        }
         
-       
-
         // Once requested image loads hide spinner and update image large src
         image.onload = function() {
             $('[data-id = "spinner"]').remove();
@@ -42,7 +49,7 @@ var projects = (function($) {
             // Execute callback if function and passed in as argument
             if (typeof(callback) === 'function') {
                 callback();
-            }
+            } 
         }
     };
     var animateThumbnailImages = function() {
@@ -119,7 +126,6 @@ var projects = (function($) {
                     // Add click handlers to pagers and links
                     $('[data-id="project-links"]').children().click(toggleSlides);
                     $('[data-id="project-pagers"]').children().click(toggleSlides);
-                    
                     $('.feature-image-small').click(toggleLargeImage);
                 });
             });
