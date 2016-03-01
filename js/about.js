@@ -1,4 +1,4 @@
-var about = (function($) {
+    var about = (function($) {
     "use strict";
 
     var jqueryMap = {
@@ -13,6 +13,7 @@ var about = (function($) {
         var imgCount = jqueryMap.$slider_wrapper.find('img').length;
         var wrapperWidth = imgCount * 100;
         var imgWidth = 100 / imgCount;
+        var count = 0;
 
         jqueryMap.$slider_wrapper.css({
             width: wrapperWidth + '%'
@@ -27,7 +28,23 @@ var about = (function($) {
             jqueryMap.$slider_wrapper.animate({
                 marginLeft: index * -100 + '%'
             });
+
+            // clear timer when pager clicked
+            clearInterval(timer);
         });
+
+        var setTimer = function() {
+            count++;
+            jqueryMap.$slider_wrapper.animate({
+                marginLeft: count * -100 + '%'
+            });
+            jqueryMap.$slider_pagers.find('li').eq(count).addClass('active').siblings().removeClass('active');
+            if(count >= imgCount - 1 ) {
+                count = -1;
+            }
+        }
+
+        var timer = setInterval(setTimer, 4000);
     })();
 
     jqueryMap.$flip_card.click(function() {
