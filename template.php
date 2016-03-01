@@ -12,7 +12,7 @@ function minim_theme($existing, $type, $theme, $path) {
     'video_bg' => array(
       'template' => 'video_bg',
       'path' => $path . '/templates/components',
-       'variables' => array('video' => $path . '/images/homepage-header.jpg', 'text' => '', 'subtext' => '')
+       'variables' => array('video' => $path . '/videos/landing-1920x815', 'text' => '', 'subtext' => '')
     ),
     'featured_project' => array(
       'template' => 'featured_project',

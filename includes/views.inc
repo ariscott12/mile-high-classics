@@ -99,21 +99,25 @@ function minim_preprocess_views_view_fields__services_list(&$v) {
 
 function minim_preprocess_views_view_fields__page_banner(&$v) {
   $row = $v['row'];
- // dsm($row);
- // var_dump($row);
+
   global $base_path;
-// var_dump(); 
   $icon = $base_path . drupal_get_path('theme', 'minim') . '/images/icons/scroll-down-arrow.png';
-  $video = $base_path . drupal_get_path('theme', 'minim') . '/videos/'.drupal_render($row->field_field_header_video);
+
+  if(!empty($row->field_field_header_video)) {
+    $video = $base_path . drupal_get_path('theme', 'minim') . '/videos/'.drupal_render($row->field_field_header_video);
+    $v['banner_video'] = $video;
+  } else {
+    // Banner image
+    $v['banner_image'] = $row->field_field_header_image;
+  }
+ 
   // Title
   $v['title'] = $row->node_title;
   
   // Banner text
   $v['banner_text'] = $row->field_field_header_text;
 
-  // Banner image
-  $v['banner_image'] = $row->field_field_header_image;
-  $v['banner_video'] = $video;
+  
 
   $v['scroll_icon'] = $icon;
 
