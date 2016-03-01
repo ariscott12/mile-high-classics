@@ -2,15 +2,16 @@ var projects = (function($) {
     "use strict";
     // Create html elements
     var $imgLarge = $('<img class = \"detail-large\" data-id = \"image-large\"  /> ');
-    var $spinner = $('<img class = "spinner" data-id = "spinner" />');
+    var $spinner = $('<div class = "spinner" data-id = "spinner" ></div>');
     var imageHeight = 0;
     var image = new Image();
 
     // Create jqueryMap
     var jqueryMap = {
-        $project_grid_link: $('[data-id=project-grid-link'),
+        $project_grid_link: $('[data-id=project-grid-link]'),
         $content: $('[data-id = "content"]'),
-        $spinner: $('[data-id = "spinner"]')
+        $spinner: $('[data-id = "spinner"]'),
+        $more_projects: $('#block-mhc-blocks-projects-grid > h2')
     };
 
     // Update detail-large src with clicked thumbnail src, show loading gif
@@ -30,7 +31,7 @@ var projects = (function($) {
 
         $imgLarge.hide();
 
-        // Prepend loading gif to div wrapper and set height
+        // Prepend loading SVG to div wrapper and set height
         $('.project-slide-wrapper').prepend($spinner);
         
         // Callback function will hide spinner when content is finished loading  
@@ -90,6 +91,7 @@ var projects = (function($) {
             if(contentHeight < 100) {
                 contentHeight = 800;
             }
+            jqueryMap.$more_projects.show();
            
             // Scroll to content-wrapper section
             $('html,body').animate({
