@@ -446,6 +446,12 @@ ul.menu li {
     }
 }
 
+@media only screen and (max-width: 800px) {
+    .region-header .menu {
+        top: -28px;
+    }
+}
+
 .hamburger {
     display: none;
     position: absolute;
@@ -500,7 +506,7 @@ ul.menu li {
     position: fixed;
     top: 62px;
     width: 100%;
-    z-index: 2000;
+    z-index: 500;
     background: #018178;
     /* The Fallback */
     background: rgba(1, 129, 120, 0.9);
@@ -835,7 +841,7 @@ ul.menu li {
 }
 
 .view-service-5 {
-    background: url("../images/services-metal.jpg") no-repeat center center;
+    background: url("../images/services-homepage/services-metal.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -852,7 +858,7 @@ ul.menu li {
 }
 
 .view-service-7 {
-    background: url("../images/services-upholstery.jpg") no-repeat center center;
+    background: url("../images/services-homepage/services-mechanical-2.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -869,7 +875,7 @@ ul.menu li {
 }
 
 .view-service-6 {
-    background: url("../images/services-paint.jpg") no-repeat center center;
+    background: url("../images/services-homepage/services-paint.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -886,7 +892,7 @@ ul.menu li {
 }
 
 .view-service-8 {
-    background: url("../images/services-mechanical.jpg") no-repeat center center;
+    background: url("../images/services-homepage/services-upholstery.jpg") no-repeat center center;    
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -949,7 +955,7 @@ ul.menu li {
 }
 
 .view-services-list li {
-    background: url("../images/icons/list-bullet.png") no-repeat scroll 0 0.15em;
+    background: url("../images/icons/list-bullet.png") no-repeat scroll 0 0.2em;
 }
 
 .view-services-list .content-wrapper {
@@ -1090,7 +1096,7 @@ ul.menu li {
 }
 
 .view-service-list-5 .bg-image {
-    background: url("../images/services-metal-large.jpg") no-repeat center center;
+    background: url("../images/services/sheet-metal-fab.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1098,7 +1104,7 @@ ul.menu li {
 }
 
 .view-service-list-8 .bg-image {
-    background: url("../images/services-upholstery-large.jpg") no-repeat center center;
+    background: url("../images/services/upholstery.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1106,7 +1112,7 @@ ul.menu li {
 }
 
 .view-service-list-7 .bg-image {
-    background: url("../images/services-mechanical-large.jpg") no-repeat center center;
+    background: url("../images/services/mechanical-reconstruction.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1114,7 +1120,7 @@ ul.menu li {
 }
 
 .view-service-list-6 .bg-image {
-    background: url("../images/services-paint-large.jpg") no-repeat center center;
+    background: url("../images/services/paint-refinishing.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1500,7 +1506,7 @@ input {
 }
 
 .view-restoration-process li {
-    background: url("../images/icons/list-bullet-orange.png") no-repeat scroll 0 0.15em;
+    background: url("../images/icons/list-bullet-orange.png") no-repeat scroll 0 0.2em;
     font-size: 20px;
     font-size: 1.25rem;
     color: #f2f2f2;
@@ -1581,7 +1587,7 @@ input {
 
 .view-restoration-process .overlay {
     background: #383838;
-    opacity: .82;
+    opacity: .75;
     z-index: 0;
     width: 100%;
     height: 100%;
@@ -1660,7 +1666,7 @@ input {
 }
 
 .view-restoration-process-48 .bg-image {
-    background: url("../images/services-metal-large.jpg") no-repeat center center;
+    background: url("../images/process/step-6.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1668,7 +1674,7 @@ input {
 }
 
 .view-restoration-process-47 .bg-image {
-    background: url("../images/services-upholstery-large.jpg") no-repeat center center;
+    background: url("../images/process/step-5-1.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1676,7 +1682,7 @@ input {
 }
 
 .view-restoration-process-46 .bg-image {
-    background: url("../images/services-mechanical-large.jpg") no-repeat center center;
+    background: url("../images/process/step-4.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1684,7 +1690,7 @@ input {
 }
 
 .view-restoration-process-45 .bg-image {
-    background: url("../images/services-paint-large.jpg") no-repeat center center;
+    background: url("../images/process/step-3.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1692,7 +1698,7 @@ input {
 }
 
 .view-restoration-process-44 .bg-image {
-    background: url("../images/services-mechanical-large.jpg") no-repeat center center;
+    background: url("../images/process/step-2.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1700,7 +1706,7 @@ input {
 }
 
 .view-restoration-process-43 .bg-image {
-    background: url("../images/services-paint-large.jpg") no-repeat center center;
+    background: url("../images/process/step-1.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1795,12 +1801,13 @@ header.sticky img {
     background: #52524d;
     position: relative;
     overflow: hidden;
+    height:815px;
     /** Media Queries **/
 }
 
 .banner-video .video-overlay {
     background: #101010;
-    opacity: .8;
+    opacity: .6;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -1871,7 +1878,7 @@ header.sticky img {
 }
 
 @media only screen and (max-width: 1640px) {
-    .banner-video video, .banner-video img {
+    .banner-video {
         height: 760px;
     }
 }
@@ -1935,12 +1942,13 @@ header.sticky img {
 }
 
 .banner-page {
+    background:#000;
     overflow: hidden;
     position: relative;
     height: 640px;
 }
 
-.banner-page video {
+.banner-page video, .banner-video video {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -1985,10 +1993,15 @@ header.sticky img {
     width: 100%;
     height: 100%;
     background: #101010;
-    opacity: .4;
     position: absolute;
     top: 0;
     left: 0;
+}
+.banner-page .overlay-video {
+    opacity: .4;
+}
+.banner-page .overlay-image {
+    opacity: .6; 
 }
 
 .banner-page h1 {
@@ -2719,6 +2732,7 @@ footer {
 
 #block-views-our-team-block h3 {
     padding: 8px 0 10px;
+    font-family: "PT Sans", sans-serif;
     width: 100%;
     background: #fff;
     color: #383838;
