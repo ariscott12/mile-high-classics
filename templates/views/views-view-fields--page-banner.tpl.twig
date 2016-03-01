@@ -9,13 +9,20 @@
           <img src = "{{ scroll_icon }}" />
         </div>
    		</div>
-	</div>
-   <video autoplay loop>
-    <source src="{{ banner_video }}.mp4" type="video/mp4 ">
-    <source src="{{ banner_video }}.ogg" type="video/ogg">
-    Your browser does not support the video tag.
-  </video> 
-	<div class = "overlay"></div>
+	</div> 
+
+  {% if banner_video %}
+    <video autoplay loop>
+      <source src="{{ banner_video }}.mp4" type="video/mp4 ">
+      <source src="{{ banner_video }}.ogg" type="video/ogg">
+      Your browser does not support the video tag.
+    </video>
+    <div class = "overlay overlay-video"></div> 
+  {% elseif banner_image %}
+    {{banner_image}}
+    <div class = "overlay overlay-image"></div>
+  {% endif %}
+
 </div>
 
 	
