@@ -21,15 +21,17 @@ function minim_preprocess_html(&$variables) {
    ),
   );
   drupal_add_html_head($viewport, 'viewport');
-  drupal_add_css('https://fonts.googleapis.com/css?family=Oswald:300,400,700', $css_options); 
-  drupal_add_css('https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700', $css_options);
-  drupal_add_css('https://fonts.googleapis.com/css?family=Raleway:400,300,700,800', $css_options);
+ // drupal_add_css('http://fonts.googleapis.com/css?family=Oswald:300,400,700', $css_options); 
+//  drupal_add_css('https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700', $css_options);
+//  drupal_add_css('https://fonts.googleapis.com/css?family=Raleway:400,300,700,800', $css_options);
 }
 
 
 
 function minim_preprocess_page(&$variables) {
 	$js_options = array('type' => 'file', 'group' => JS_THEME);
+    drupal_add_js('https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js', 'external');
+    drupal_add_js(drupal_get_path('theme', 'minim') . '/js/fonts.js', $js_options);
     drupal_add_js(drupal_get_path('theme', 'minim') . '/js/min/modernizr.min.js', $js_options);
     drupal_add_js(drupal_get_path('theme', 'minim') . '/js/waypoint.js', $js_options);
     drupal_add_js(drupal_get_path('theme', 'minim') . '/js/common.js', $js_options);
