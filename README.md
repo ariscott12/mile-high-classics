@@ -1,2 +1,10 @@
 # Mile High Classics
-Repository for Mile High Classics website design and rebuild. Website was built with Drupal 7 and uses Minim Drupal theme
+Website source code for Mile High Classics website redesign and rebuild
+
+# Website Templates
+Mile high classics uses twig templating engine for html views
+
+# Website theme
+The website uses the minim theme as a base theme.  All styles originally written with SASS and compiled to CSS with Grunt.  Website is fully responsive
+
+
